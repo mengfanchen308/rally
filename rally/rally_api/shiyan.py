@@ -39,3 +39,5 @@ for re in result:
     print(re['_ref'])
     page = requests.get(re['_ref'], headers=headers).text
     result = json.loads(page)
+
+print('some change')
