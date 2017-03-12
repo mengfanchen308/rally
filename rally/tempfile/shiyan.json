@@ -1,0 +1,152 @@
+//subscription
+{
+    "source": {
+        "QueryResult": {
+            "_rallyAPIMajor": "2",
+            "_rallyAPIMinor": "0",
+            "Errors": [],
+            "Warnings": [],
+            "TotalResultCount": 1,
+            "StartIndex": 1,
+            "PageSize": 20,
+            "Results": [
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/subscription/119795615",
+                    "_refObjectUUID": "22fd7c0b-ddc3-4828-a5ba-38f4adc49237",
+                    "_refObjectName": "Cisco Common",
+                    "_type": "Subscription"
+                }
+            ]
+        }
+    },
+////////////////////////////////////////////////////////////////////////////////////
+    "subscription": {
+        "Subscription": {
+            "_rallyAPIMajor": "2",
+            "_rallyAPIMinor": "0",
+            "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/subscription/119795615",
+            "_refObjectUUID": "22fd7c0b-ddc3-4828-a5ba-38f4adc49237",
+            "_objectVersion": "1323",
+            "_refObjectName": "Cisco Common",
+            "CreationDate": "2008-03-04T17:43:58.000Z",
+            "_CreatedAt": "Mar 5, 2008",
+            "ObjectID": 119795615,
+            "ObjectUUID": "22fd7c0b-ddc3-4828-a5ba-38f4adc49237",
+            "VersionId": "1323",
+            "ApiKeysEnabled": true,
+            "EmailEnabled": true,
+            "ExpirationDate": null,
+            "JSONPEnabled": false,
+            "MaximumCustomUserFields": -1,
+            "MaximumProjects": -1,
+            "Modules": "Integration Hub,Rally Portfolio Manager,HP Integration,IBM Integration,Rally Idea Manager,Rally Idea Manager Multisite,Rally Quality Manager,Rally Support Manager,Rally Time Tracker,SSO,IP Restriction,Extension Whitelist",
+            "Name": "Cisco Common",
+            "PasswordExpirationDays": 0,
+            "PreviousPasswordCount": 0,
+            "ProjectHierarchyEnabled": true,
+            "SessionTimeoutSeconds": null,
+            "SSOUserExceptions": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/Subscription/119795615/SSOUserExceptions",
+                "_type": "User",
+                "Count": 111
+            },
+            "StoryHierarchyEnabled": true,
+            "StoryHierarchyType": "Unlimited",
+            "SubscriptionID": 2001,
+            "SubscriptionType": "Unlimited",
+            "WebhooksEnabled": true,
+            "Workspaces": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/Subscription/119795615/Workspaces",
+                "_type": "Workspace",
+                "Count": 1
+            },
+            "ZuulID": "a4a0ccef2cbe4b06b7fe51d0eb0045f0",
+            "Errors": [],
+            "Warnings": []
+        }
+    },
+////////////////////////////////////////////////////////////////////////////////////
+    "Workspaces": {
+        "QueryResult": {
+            "_rallyAPIMajor": "2",
+            "_rallyAPIMinor": "0",
+            "Errors": [],
+            "Warnings": [],
+            "TotalResultCount": 1,
+            "StartIndex": 1,
+            "PageSize": 20,
+            "Results": [
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/workspace/2261734389",
+                    "_refObjectUUID": "44bc5f3f-8a89-4754-8bec-258f9023d2b3",
+                    "_objectVersion": "14",
+                    "_refObjectName": "CCATG-CS-CMSE",
+                    "CreationDate": "2010-10-13T13:40:37.291Z",
+                    "_CreatedAt": "Oct 13, 2010",
+                    "ObjectID": 2261734389,
+                    "ObjectUUID": "44bc5f3f-8a89-4754-8bec-258f9023d2b3",
+                    "VersionId": "14",
+                    "Subscription": {
+                        "_rallyAPIMajor": "2",
+                        "_rallyAPIMinor": "0",
+                        "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/subscription/119795615",
+                        "_refObjectUUID": "22fd7c0b-ddc3-4828-a5ba-38f4adc49237",
+                        "_refObjectName": "Cisco Common",
+                        "_type": "Subscription"
+                    },
+                    "Children": {
+                        "_rallyAPIMajor": "2",
+                        "_rallyAPIMinor": "0",
+                        "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/Workspace/2261734389/Children",
+                        "_type": "Project",
+                        "Count": 1
+                    },
+                    "Description": "",
+                    "Name": "CCATG-CS-CMSE",
+                    "Notes": "",
+                    "Owner": {
+                        "_rallyAPIMajor": "2",
+                        "_rallyAPIMinor": "0",
+                        "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/user/2261759047",
+                        "_refObjectUUID": "1909b2cf-baf2-4113-9540-4910e5c3bc15",
+                        "_refObjectName": "Peter Sheu",
+                        "_type": "User"
+                    },
+                    "Projects": {
+                        "_rallyAPIMajor": "2",
+                        "_rallyAPIMinor": "0",
+                        "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/Workspace/2261734389/Projects",
+                        "_type": "Project",
+                        "Count": 35
+                    },
+                    "SchemaVersion": "749ec99bf46e4b95340543b52fb64f81",
+                    "State": "Open",
+                    "Style": "UserStory",
+                    "TypeDefinitions": {
+                        "_rallyAPIMajor": "2",
+                        "_rallyAPIMinor": "0",
+                        "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/Workspace/2261734389/TypeDefinitions",
+                        "_type": "TypeDefinition",
+                        "Count": 60
+                    },
+                    "WorkspaceConfiguration": {
+                        "_rallyAPIMajor": "2",
+                        "_rallyAPIMinor": "0",
+                        "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/workspaceconfiguration/2261734392",
+                        "_refObjectUUID": "ebf0df75-9cb4-4aa2-ba0d-104a980b482f",
+                        "_type": "WorkspaceConfiguration"
+                    },
+                    "_type": "Workspace"
+                }
+            ]
+        }
+    }
+}
