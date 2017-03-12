@@ -40,4 +40,4 @@ for re in result:
     page = requests.get(re['_ref'], headers=headers).text
     result = json.loads(page)
 
-print('some change')
+print('some changes')
