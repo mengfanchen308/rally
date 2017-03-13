@@ -156,7 +156,7 @@ class MysqlCurd(object):
 
     def create_table(self, table, param):
         """
-        param是数组字典型存的是列名和属性，会删除原来同名表
+        param是数组字典型存的是列名和属性
         create table shiyan (id int not null auto_increment primary key , name varchar(20) not null , time timestamp default current_timestamp)
         :param table:
         :param param:
@@ -172,6 +172,27 @@ class MysqlCurd(object):
         except Exception as e:
             print(sql)
             print(e)
+
+    def create_table_auto(self, table, param):
+        """
+        param为要插入的实例
+        :param table:
+        :param param:
+        :return:
+        """
+        params = {}
+        for _ in param.keys():
+            value = param.get(_)
+            if isinstance(value, int):
+                params[_] = 'int(20)'
+            elif isinstance(value, bool):
+                params[_] = 'boolean'
+            elif isinstance(value, str):
+                params[_] = 'varchar({0})'.format(len(value)*2)
+            else:
+                params[_] = ''
+        params['ObjectID'] = 'varchar(20) not null primary key'
+        self.create_table_force(table, params)
 
     def create_table_force(self, table, param):
         """
@@ -189,6 +210,7 @@ class MysqlCurd(object):
             self.curor.execute(sql)
             self.conn.commit()
         except Exception as e:
+            print(sql)
             print(e)
 
     def close_connect(self):

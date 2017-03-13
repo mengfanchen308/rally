@@ -1,6 +1,7 @@
 import requests
 import json
 from rally_api.information import *
+from mysql_tools.mysql_curd import *
 
 
 class Persistable(object):
@@ -10,20 +11,23 @@ class Persistable(object):
         self.url = 'https://rally1.rallydev.com/slm/webservice/v2.0/{0}/{1}'.format(self.classname, self.id)
         # self.sub_url = 'https://rally1.rallydev.com/slm/webservice/v2.0/{0}' + '?{1}=' + self.url + '&query=' \
         #                '&fetch=true&start=1&pagesize=2000'
-        self.sub_url = self.url + '{0}?start={1}&pagesize=2000'
+        self.sub_url = self.url + '{0}?start={1}&pagesize=2000&fetch=1'
 
     def get_information(self):
         self.information = requests.get(self.url, headers=headers).text
         return self.information
 
-    def insert_mysql(self):
+    def insert_mysql_sql(self):
         param = {}
         self.get_information()
         data = json.loads(self.information)[self.classname]
         for _ in data.keys():
-            if not isinstance(data.get(_), dict):
-                param[_] = str(data.get(_))
-        print(param)
+            value = data.get(_)
+            if not isinstance(value, dict) and not _ == 'Errors' and not _ == 'Warnings':
+                if value is None:
+                    value = str(value)
+                param[_] = value
+        return param
 
     def get_sub_id(self, sub):
         sub_id = []
