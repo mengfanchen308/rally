@@ -3,8 +3,7 @@ import json
 from rally_api.information import *
 
 
-class Subscription(object):
-
+class Persistable(object):
     def __init__(self, object_id):
         self.id = object_id
         self.url = 'https://rally1.rallydev.com/slm/webservice/v2.0/{0}/{1}'.format(self.__class__.__name__, self.id)
@@ -25,13 +24,30 @@ class Subscription(object):
         return sub_id
 
 
-class Workspace(Subscription):
+class Subscription(Persistable):
+
+    def __init__(self, object_id):
+        super(Subscription, self).__init__(object_id)
+
+
+class Workspace(Persistable):
 
     def __init__(self, object_id):
         super(Workspace, self).__init__(object_id)
 
 
+class PortfolioItem(Persistable):
+
+    def __init__(self, object_id):
+        super(PortfolioItem, self).__init__(object_id)
+
+
+class Feature(Persistable):
+
+    def __init__(self, object_id):
+        super(Feature, self).__init__(object_id)
+
+
 
 if __name__ == '__main__':
-    shiyan = Workspace('119795615')
-    print(shiyan.get_information())
+    print(requests.get('https://rally1.rallydev.com/slm/webservice/v2.0/portfolioItem?workspace=https://rally1.rallydev.com/slm/webservice/v2.0/workspace/2261734389&start=1&pagesize=2000', headers=headers).text)
