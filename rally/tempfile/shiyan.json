@@ -21,7 +21,7 @@
             ]
         }
     },
-////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////
     "subscription": {
         "Subscription": {
             "_rallyAPIMajor": "2",
@@ -71,7 +71,7 @@
             "Warnings": []
         }
     },
-////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////
     "Workspaces": {
         "QueryResult": {
             "_rallyAPIMajor": "2",
@@ -147,6 +147,110 @@
                     "_type": "Workspace"
                 }
             ]
+        }
+    },
+    ////////////////////////////////////////////////////////////////////
+    "Project": {
+        "Project": {
+            "_rallyAPIMajor": "2",
+            "_rallyAPIMinor": "0",
+            "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/project/11426367084",
+            "_refObjectUUID": "99c8c403-7de0-459f-802b-4e55c4fc4411",
+            "_objectVersion": "33",
+            "_refObjectName": "MCT&XNodeMgr",
+            "CreationDate": "2013-04-16T01:47:07.992Z",
+            "_CreatedAt": "Apr 16, 2013",
+            "ObjectID": 11426367084,
+            "ObjectUUID": "99c8c403-7de0-459f-802b-4e55c4fc4411",
+            "VersionId": "33",
+            "Subscription": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/subscription/119795615",
+                "_refObjectUUID": "22fd7c0b-ddc3-4828-a5ba-38f4adc49237",
+                "_refObjectName": "Cisco Common",
+                "_type": "Subscription"
+            },
+            "BuildDefinitions": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/Project/11426367084/BuildDefinitions",
+                "_type": "BuildDefinition",
+                "Count": 1
+            },
+            "Children": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/Project/11426367084/Children",
+                "_type": "Project",
+                "Count": 0
+            },
+            "Description": "Maestro MCT integration     \u003Col\u003E \u003Cli\u003EMCT service(RESTAPI) with OAuth2.0\u003C/li\u003E \u003Cli\u003E###RMC service(RESTAPI) with OAuth2.0\u003C/li\u003E \u003C/ol\u003E",
+            "Editors": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/Project/11426367084/Editors",
+                "_type": "User",
+                "Count": 125
+            },
+            "Iterations": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/Project/11426367084/Iterations",
+                "_type": "Iteration",
+                "Count": 87
+            },
+            "Name": "MCT&XNodeMgr",
+            "Notes": "",
+            "Owner": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/user/2876175867",
+                "_refObjectUUID": "b801416d-ebcf-40e3-a238-91daaff24648",
+                "_refObjectName": "Selly Huang",
+                "_type": "User"
+            },
+            "Parent": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/project/68930759008",
+                "_refObjectUUID": "eb2bbec9-2f56-4c46-8211-11043b312dc5",
+                "_refObjectName": "Service Monitoring",
+                "_type": "Project"
+            },
+            "Releases": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/Project/11426367084/Releases",
+                "_type": "Release",
+                "Count": 27
+            },
+            "RevisionHistory": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/revisionhistory/11426367085",
+                "_refObjectUUID": "8b010e1e-6229-417c-9728-8061a7833f18",
+                "_type": "RevisionHistory"
+            },
+            "SchemaVersion": "317c51ae0428185e1b116e3752fc22be",
+            "State": "Open",
+            "TeamMembers": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/Project/11426367084/TeamMembers",
+                "_type": "User",
+                "Count": 44
+            },
+            "Workspace": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/workspace/2261734389",
+                "_refObjectUUID": "44bc5f3f-8a89-4754-8bec-258f9023d2b3",
+                "_refObjectName": "CCATG-CS-CMSE",
+                "_type": "Workspace"
+            },
+            "Errors": [],
+            "Warnings": []
         }
     }
 }
