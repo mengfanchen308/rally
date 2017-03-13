@@ -1,7 +1,7 @@
 import requests
 import json
-from rally_api.information import *
-from mysql_tools.mysql_curd import *
+from .information import *
+from ..mysql_tools.mysql_curd import *
 
 
 class Persistable(object):
@@ -41,8 +41,8 @@ class Persistable(object):
                 result = requests.get(self.sub_url.format(sub, _), headers=headers).text
                 temp_data = json.loads(result)
                 temp_data = temp_data['QueryResult']['Results']
-                for _ in temp_data:
-                    sub_id.append(_['_ref'].split('/')[-1])
+                for temp in temp_data:
+                    sub_id.append(temp['_ref'].split('/')[-1])
         return sub_id
 
 
@@ -100,4 +100,4 @@ class PortfolioItem(Persistable):
 
 if __name__ == '__main__':
     shiyan = Subscription()
-    shiyan.insert_mysql()
+    shiyan.insert_mysql_sql()

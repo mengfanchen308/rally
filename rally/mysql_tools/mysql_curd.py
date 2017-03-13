@@ -157,7 +157,7 @@ class MysqlCurd(object):
     def create_table(self, table, param):
         """
         param是数组字典型存的是列名和属性
-        create table shiyan (id int not null auto_increment primary key , name varchar(20) not null , time timestamp default current_timestamp)
+        create table shiyan (id int not null , name varchar(20) not null , time timestamp default current_timestamp)
         :param table:
         :param param:
         :return:
