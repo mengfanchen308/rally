@@ -6,7 +6,8 @@ from rally_api.information import *
 class Persistable(object):
     def __init__(self, object_id):
         self.id = object_id
-        self.url = 'https://rally1.rallydev.com/slm/webservice/v2.0/{0}/{1}'.format(self.__class__.__name__, self.id)
+        self.classname = self.__class__.__name__
+        self.url = 'https://rally1.rallydev.com/slm/webservice/v2.0/{0}/{1}'.format(self.classname, self.id)
         # self.sub_url = 'https://rally1.rallydev.com/slm/webservice/v2.0/{0}' + '?{1}=' + self.url + '&query=' \
         #                '&fetch=true&start=1&pagesize=2000'
         self.sub_url = self.url + '{0}?start={1}&pagesize=2000'
@@ -16,7 +17,13 @@ class Persistable(object):
         return self.information
 
     def insert_mysql(self):
-        pass
+        param = {}
+        self.get_information()
+        data = json.loads(self.information)[self.classname]
+        for _ in data.keys():
+            if not isinstance(data.get(_), dict):
+                param[_] = str(data.get(_))
+        print(param)
 
     def get_sub_id(self, sub):
         sub_id = []
@@ -51,6 +58,7 @@ class Workspace(Persistable):
     def get_project_id(self):
         return super(Workspace, self).get_sub_id('/projects')
 
+
 class Project(Persistable):
 
     def __init__(self, object_id):
@@ -77,7 +85,7 @@ class PortfolioItem(Persistable):
     def __init__(self, object_id):
         super(PortfolioItem, self).__init__(object_id)
 
-    def get_PortfolioItem_id(self, name=''):
+    def get_portfolioitem_id(self, name=''):
         """
         默认返回所有feature,theme,initiative.传入参数即可选择
         :param name:
@@ -87,4 +95,5 @@ class PortfolioItem(Persistable):
 
 
 if __name__ == '__main__':
-    pass
+    shiyan = Subscription()
+    shiyan.insert_mysql()
