@@ -1,5 +1,368 @@
 //subscription
 {
+    "protfolioitem": {
+        "QueryResult": {
+            "_rallyAPIMajor": "2",
+            "_rallyAPIMinor": "0",
+            "Errors": [],
+            "Warnings": [],
+            "TotalResultCount": 1171,
+            "StartIndex": 1,
+            "PageSize": 20,
+            "Results": [
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/theme/16022344950",
+                    "_refObjectUUID": "1e8548c5-23ae-40ce-9054-d9798257d8e8",
+                    "_refObjectName": "The DB change to Mysql from Oracle",
+                    "_type": "PortfolioItem/Theme"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/initiative/16022345296",
+                    "_refObjectUUID": "209dbb9d-aaba-467b-96af-18ff14075ed6",
+                    "_refObjectName": "DB change: from oracle to mysql",
+                    "_type": "PortfolioItem/Initiative"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/theme/19030766802",
+                    "_refObjectUUID": "b6c01411-90fa-4c11-a44b-765fbff38f30",
+                    "_refObjectName": "security",
+                    "_type": "PortfolioItem/Theme"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20114349168",
+                    "_refObjectUUID": "7fbb8711-37bd-4bbc-a4d6-272c9731e03f",
+                    "_refObjectName": "[User Facing]Troubleshooting Automation",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20114349714",
+                    "_refObjectUUID": "75dd1fc1-4e72-43d6-b4b6-282d7b442830",
+                    "_refObjectName": "[User Facing]JMT ehancement",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20150125558",
+                    "_refObjectUUID": "54b01e93-be30-4a05-8e1c-9db0da8e57cb",
+                    "_refObjectName": "HA-Security compliance enhancement",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218049239",
+                    "_refObjectUUID": "e002d09b-6609-424f-bb19-9006ba577d3f",
+                    "_refObjectName": "SLiM - Server data source integrity improvement",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218082076",
+                    "_refObjectUUID": "33c9bf31-7920-4922-bbd8-3da5d615ffdb",
+                    "_refObjectName": "SLiM -PCA migration for SE",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218083979",
+                    "_refObjectUUID": "c8b7a383-cbf8-4332-a83d-ba8e32cf6401",
+                    "_refObjectName": "SLiM -PAC migration for Eng",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218086189",
+                    "_refObjectUUID": "ab7ba03c-a083-4c59-913c-463e6adba3fc",
+                    "_refObjectName": "SLiM -PowerDNS migration",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218087596",
+                    "_refObjectUUID": "18365fa6-1aa3-4c93-904d-d3c44c3ec682",
+                    "_refObjectName": "[Arch Unify] SLiM - HA solution",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218127020",
+                    "_refObjectUUID": "ba4be00c-1f57-4090-8c80-2da860378ed6",
+                    "_refObjectName": "SLiM - Security",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218128343",
+                    "_refObjectUUID": "288e6c54-7b9c-44d7-b8bd-afdea17f3600",
+                    "_refObjectName": "SLiM -JMS migration",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218130059",
+                    "_refObjectUUID": "83d5a814-bdeb-466f-94d3-fde61817dab9",
+                    "_refObjectName": "SLiM - RemoteExecution performance tuning",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218131582",
+                    "_refObjectUUID": "4bad862b-951a-45ca-b358-f1df894dfb6f",
+                    "_refObjectName": "SLiM - Old SLiM decommission",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218132806",
+                    "_refObjectUUID": "b5301319-6ffa-4595-a82b-9403951407fe",
+                    "_refObjectName": "SLiM -Seamless integration to OCP transformation",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218135312",
+                    "_refObjectUUID": "6c9eade5-e6ac-4cfc-8d83-aa9afcb5c4ff",
+                    "_refObjectName": "SLiM - No agent support",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218136625",
+                    "_refObjectUUID": "690e015d-b3ee-44cd-99c8-8904296c53f4",
+                    "_refObjectName": "SLiM - Unified GUI style",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218701266",
+                    "_refObjectUUID": "acbc3546-dfbd-45d7-be06-2ffe467dc7bd",
+                    "_refObjectName": "[RMP]Release management",
+                    "_type": "PortfolioItem/Feature"
+                },
+                {
+                    "_rallyAPIMajor": "2",
+                    "_rallyAPIMinor": "0",
+                    "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218706238",
+                    "_refObjectUUID": "3d51c881-d7f8-465d-b214-91527d853e9d",
+                    "_refObjectName": "[RMP]Deployment management",
+                    "_type": "PortfolioItem/Feature"
+                }
+            ]
+        }
+    },
+    "feature": {
+        "Feature": {
+            "_rallyAPIMajor": "2",
+            "_rallyAPIMinor": "0",
+            "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/portfolioitem/feature/20218701266",
+            "_refObjectUUID": "acbc3546-dfbd-45d7-be06-2ffe467dc7bd",
+            "_objectVersion": "458",
+            "_refObjectName": "[RMP]Release management",
+            "CreationDate": "2014-06-30T07:54:13.328Z",
+            "_CreatedAt": "Jun 30, 2014",
+            "ObjectID": 20218701266,
+            "ObjectUUID": "acbc3546-dfbd-45d7-be06-2ffe467dc7bd",
+            "VersionId": "458",
+            "Subscription": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/subscription/119795615",
+                "_refObjectUUID": "22fd7c0b-ddc3-4828-a5ba-38f4adc49237",
+                "_refObjectName": "Cisco Common",
+                "_type": "Subscription"
+            },
+            "Workspace": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/workspace/2261734389",
+                "_refObjectUUID": "44bc5f3f-8a89-4754-8bec-258f9023d2b3",
+                "_refObjectName": "CCATG-CS-CMSE",
+                "_type": "Workspace"
+            },
+            "Changesets": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/Feature/20218701266/Changesets",
+                "_type": "Changeset",
+                "Count": 0
+            },
+            "Description": "",
+            "Discussion": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/Feature/20218701266/Discussion",
+                "_type": "ConversationPost",
+                "Count": 0
+            },
+            "DisplayColor": "#848689",
+            "Expedite": false,
+            "FormattedID": "F53",
+            "LastUpdateDate": "2017-02-14T07:39:49.022Z",
+            "LatestDiscussionAgeInMinutes": null,
+            "Milestones": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/Feature/20218701266/Milestones",
+                "_type": "Milestone",
+                "_tagsNameArray": [],
+                "Count": 0
+            },
+            "Name": "[RMP]Release management",
+            "Notes": "",
+            "Owner": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/user/2418346184",
+                "_refObjectUUID": "7a332c65-0e4a-4b5b-a7ec-4621a36e0b4f",
+                "_refObjectName": "Jim Chang",
+                "_type": "User"
+            },
+            "Project": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/project/7875955807",
+                "_refObjectUUID": "58f6a578-6305-401d-b670-436eca00b5db",
+                "_refObjectName": "RMP",
+                "_type": "Project"
+            },
+            "Ready": false,
+            "RevisionHistory": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/revisionhistory/20218701267",
+                "_refObjectUUID": "3162cd28-a22f-4a0f-8ea6-06143f18cdbe",
+                "_type": "RevisionHistory"
+            },
+            "Tags": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/Feature/20218701266/Tags",
+                "_type": "Tag",
+                "_tagsNameArray": [],
+                "Count": 0
+            },
+            "AcceptedLeafStoryCount": 123,
+            "AcceptedLeafStoryPlanEstimateTotal": 89.9,
+            "ActualEndDate": "2016-07-05T02:23:55.724Z",
+            "ActualStartDate": "2014-07-15T07:29:37.214Z",
+            "Archived": false,
+            "Attachments": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/Feature/20218701266/Attachments",
+                "_type": "Attachment",
+                "Count": 0
+            },
+            "Collaborators": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/Feature/20218701266/Collaborators",
+                "_type": "User",
+                "Count": 13
+            },
+            "DirectChildrenCount": 77,
+            "InvestmentCategory": "None",
+            "JobSize": 1,
+            "LeafStoryCount": 123,
+            "LeafStoryPlanEstimateTotal": 89.9,
+            "PercentDoneByStoryCount": 1.0,
+            "PercentDoneByStoryPlanEstimate": 1.0,
+            "PlannedEndDate": "2015-06-30T15:59:59.000Z",
+            "PlannedStartDate": "2014-06-30T16:00:00.000Z",
+            "PortfolioItemType": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/typedefinition/4628566007",
+                "_refObjectUUID": "55661243-c4c6-468a-8024-91df1d417315",
+                "_refObjectName": "Feature",
+                "_type": "TypeDefinition"
+            },
+            "PortfolioItemTypeName": "Feature",
+            "PreliminaryEstimate": null,
+            "PreliminaryEstimateValue": null,
+            "Rank": 24230.000,
+            "Recycled": false,
+            "RefinedEstimate": 0,
+            "RiskScore": 0,
+            "RROEValue": 1,
+            "StateChangedDate": "2015-06-02T22:45:50.261Z",
+            "TimeCriticality": 1,
+            "UnEstimatedLeafStoryCount": 14,
+            "UserBusinessValue": 1,
+            "ValueScore": 0,
+            "WSJFScore": 0.0,
+            "c_EstimatedEffortManday": null,
+            "c_FeaturePriority": null,
+            "c_FeatureType": "Customer Requirement",
+            "c_InternalUserGroups": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/Feature/20218701266/c_InternalUserGroups",
+                "_type": "AllowedAttributeValue",
+                "_tagsNameArray": [],
+                "Count": 0
+            },
+            "c_RequestType": null,
+            "c_SpecificCiscoProductToSupport": "Common/Core",
+            "LateChildCount": 0,
+            "Parent": null,
+            "Predecessors": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/Feature/20218701266/Predecessors",
+                "_type": "PortfolioItem/Feature",
+                "Count": 0
+            },
+            "Release": null,
+            "State": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/state/5792515586",
+                "_refObjectUUID": "8c2d74b6-d0ac-4279-a197-bcca38f000cb",
+                "_refObjectName": "Done",
+                "_type": "State"
+            },
+            "Successors": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/Feature/20218701266/Successors",
+                "_type": "PortfolioItem/Feature",
+                "Count": 0
+            },
+            "UserStories": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/Feature/20218701266/UserStories",
+                "_type": "HierarchicalRequirement",
+                "Count": 77
+            },
+            "Errors": [],
+            "Warnings": []
+        }
+    },
     "source": {
         "QueryResult": {
             "_rallyAPIMajor": "2",
@@ -149,7 +512,7 @@
             ]
         }
     },
-    ////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////
     "Project": {
         "Project": {
             "_rallyAPIMajor": "2",
