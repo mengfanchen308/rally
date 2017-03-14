@@ -17,16 +17,18 @@ def initialize(root):
 
 
 def initialize_mysql_table():
-    root = Subscription()
-    initialize_create(root)
-    workspace = Workspace(root.get_workspace_id()[0])
-    initialize_create(workspace)
-    project = Project(workspace.get_project_id()[0])
-    initialize_create(project)
-    release = Release(project.get_release_id()[0])
-    initialize_create(release)
-    iteration = Iteration(project.get_iteration_id()[0])
-    initialize_create(iteration)
+    # root = Subscription()
+    # initialize_create(root)
+    # workspace = Workspace(root.get_workspace_id()[0])
+    # initialize_create(workspace)
+    # project = Project(workspace.get_project_id()[0])
+    # initialize_create(project)
+    # release = Release(project.get_release_id()[0])
+    # initialize_create(release)
+    # iteration = Iteration(project.get_iteration_id()[0])
+    # initialize_create(iteration)
+    feature = Feature(get_portfolioitem_id('feature')[0])
+    initialize_create(feature)
 
 
 def insert_mysql_test():
@@ -43,11 +45,14 @@ def insert_mysql_test():
         for temp in project.get_iteration_id():
             iteration = Iteration(temp)
             initialize(iteration)
+    for _ in get_portfolioitem_id('feature'):
+        feature = Feature(_)
+        initialize(feature)
 
 
 def main():
-    # initialize_mysql_table()
-    insert_mysql_test()
+    initialize_mysql_table()
+    # insert_mysql_test()
 
 if __name__ == '__main__':
     main()

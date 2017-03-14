@@ -129,11 +129,15 @@ class PortfolioItem(Persistable):
 
 
 class Feature(Persistable):
-    pass
+    def __init__(self, object_id):
+        super(Feature, self).__init__(object_id)
+        self.url = 'https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/{0}/{1}'.format(self.classname, self.id)
 
 
 class Theme(Persistable):
-    pass
+
+    def __init__(self, object_id):
+        super(Theme, self).__init__(object_id)
 
 
 class Initiative(Persistable):
