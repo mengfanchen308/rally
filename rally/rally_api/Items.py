@@ -1,7 +1,7 @@
 import requests
 import json
 from .information import *
-from ..mysql_tools.mysql_curd import *
+from mysql_tools.mysql_curd import *
 
 
 class Persistable(object):
@@ -17,15 +17,43 @@ class Persistable(object):
         self.information = requests.get(self.url, headers=headers).text
         return self.information
 
-    def insert_mysql_sql(self):
+    def create_mysql_param(self):
         param = {}
         self.get_information()
+        print(self.information)
         data = json.loads(self.information)[self.classname]
         for _ in data.keys():
             value = data.get(_)
-            if not isinstance(value, dict) and not _ == 'Errors' and not _ == 'Warnings':
+            if not _ == 'Errors' and not _ == 'Warnings':
                 if value is None:
-                    value = str(value)
+                    value = ''
+                if isinstance(value, dict):
+                    try:
+                        sub_value = value['_refObjectUUID'].split('/')[-1]
+                        param[_ + '/' + value['_type']] = sub_value
+                        continue
+                    except IndexError and KeyError:
+                        continue
+                param[_] = value
+        return param
+
+    def insert_mysql_param(self):
+        param = {}
+        self.get_information()
+        print(self.information)
+        data = json.loads(self.information)[self.classname]
+        for _ in data.keys():
+            value = data.get(_)
+            if not _ == 'Errors' and not _ == 'Warnings':
+                if value is None:
+                    continue
+                if isinstance(value, dict):
+                    try:
+                        sub_value = value['_refObjectUUID'].split('/')[-1]
+                        param[_ + '/' + value['_type']] = sub_value
+                        continue
+                    except IndexError and KeyError:
+                        continue
                 param[_] = value
         return param
 
@@ -81,6 +109,16 @@ class Project(Persistable):
         return super(Project, self).get_sub_id('/teammembers')
 
 
+class Release(Persistable):
+
+    def __init__(self, object_id):
+        super(Release, self).__init__(object_id)
+
+class Iteration(Persistable):
+
+    def __init__(self, object_id):
+        super(Iteration, self).__init__(object_id)
+
 class PortfolioItem(Persistable):
     """
     feature theme initiative
@@ -100,4 +138,4 @@ class PortfolioItem(Persistable):
 
 if __name__ == '__main__':
     shiyan = Subscription()
-    shiyan.insert_mysql_sql()
+    shiyan.insert_mysql_param()

@@ -615,5 +615,76 @@
             "Errors": [],
             "Warnings": []
         }
-    }
+    },
+    "release": {
+        "Release": {
+            "_rallyAPIMajor": "2",
+            "_rallyAPIMinor": "0",
+            "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/release/56447440666",
+            "_refObjectUUID": "32de4af8-492a-44e4-afc2-0269f30b01bd",
+            "_objectVersion": "7",
+            "_refObjectName": "CIM v1.0",
+            "CreationDate": "2016-05-26T02:23:59.529Z",
+            "_CreatedAt": "May 26, 2016",
+            "ObjectID": 56447440666,
+            "ObjectUUID": "32de4af8-492a-44e4-afc2-0269f30b01bd",
+            "VersionId": "7",
+            "Subscription": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/subscription/119795615",
+                "_refObjectUUID": "22fd7c0b-ddc3-4828-a5ba-38f4adc49237",
+                "_refObjectName": "Cisco Common",
+                "_type": "Subscription"
+            },
+            "Workspace": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/workspace/2261734389",
+                "_refObjectUUID": "44bc5f3f-8a89-4754-8bec-258f9023d2b3",
+                "_refObjectName": "CCATG-CS-CMSE",
+                "_type": "Workspace"
+            },
+            "Accepted": 63.0,
+            "GrossEstimateConversionRatio": 1.0,
+            "Name": "CIM v1.0",
+            "Notes": "",
+            "PlanEstimate": 86.0,
+            "PlannedVelocity": null,
+            "Project": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/project/56025476762",
+                "_refObjectUUID": "1f28215e-2623-4054-b53a-f557116efa4e",
+                "_refObjectName": "CWS",
+                "_type": "Project"
+            },
+            "ReleaseDate": "2016-06-12T15:59:59.000Z",
+            "ReleaseStartDate": "2016-05-26T16:00:00.000Z",
+            "RevisionHistory": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/revisionhistory/56447440668",
+                "_refObjectUUID": "9e98b8fe-fcce-497a-9c84-936f94820a2f",
+                "_type": "RevisionHistory"
+            },
+            "State": "Planning",
+            "TaskActualTotal": 303.0,
+            "TaskEstimateTotal": 924.0,
+            "TaskRemainingTotal": 24.0,
+            "Theme": "\u003Ch1 class=\"with-breadcrumbs\"\u003E\u003Cbr /\u003E\u003C/h1\u003E",
+            "Version": null,
+            "c_QuarterlyPlanning": {
+                "_rallyAPIMajor": "2",
+                "_rallyAPIMinor": "0",
+                "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/Release/56447440666/c_QuarterlyPlanning",
+                "_type": "AllowedAttributeValue",
+                "_tagsNameArray": [],
+                "Count": 0
+            },
+            "Errors": [],
+            "Warnings": []
+        }
+    },
+    "":{"HierarchicalRequirement": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/hierarchicalrequirement/2536467204", "_refObjectUUID": "aa381d9d-a243-48b4-9715-2c44ecc8205f", "_objectVersion": "42", "_refObjectName": "Need to parse/show “Hybrid VoIP” usage in daily MMP report", "CreationDate": "2010-12-08T20:38:02.666Z", "_CreatedAt": "Dec 9, 2010", "ObjectID": 2536467204, "ObjectUUID": "aa381d9d-a243-48b4-9715-2c44ecc8205f", "VersionId": "42", "Subscription": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/subscription/119795615", "_refObjectUUID": "22fd7c0b-ddc3-4828-a5ba-38f4adc49237", "_refObjectName": "Cisco Common", "_type": "Subscription"}, "Workspace": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/workspace/2261734389", "_refObjectUUID": "44bc5f3f-8a89-4754-8bec-258f9023d2b3", "_refObjectName": "CCATG-CS-CMSE", "_type": "Workspace"}, "Changesets": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/Changesets", "_type": "Changeset", "Count": 0}, "Description": "\u003CP\u003EAudio/Video PM/EM want to find out \"Hybrid VoIP\" usage from daily MMP reports. Presently, this info is not presented.\u003C/P\u003E \u003CP\u003E+++++\u003C/P\u003E \u003CP style=\"MARGIN-LEFT: 33pt\" class=\"MsoNormal\"\u003E\u003CI\u003E\u003CFONT color=\"blue\" size=\"2\" face=\"Arial\"\u003E\u003CSPAN style=\"FONT-STYLE: italic; FONT-FAMILY: Arial; COLOR: blue; FONT-SIZE: 10pt\"\u003EIn MMP3.4, MCC/MCS only report VOIP session peak number to DB, which includes Hybrid VOIP and Legacy VOIP. Now we need report Hybrid/Legacy VOIP respectively.\u003C/SPAN\u003E\u003C/FONT\u003E\u003C/I\u003E\u003C/P\u003E \u003CP style=\"MARGIN-LEFT: 33pt\" class=\"MsoNormal\"\u003E\u003CI\u003E\u003CFONT color=\"blue\" size=\"2\" face=\"Arial\"\u003E\u003CSPAN style=\"FONT-STYLE: italic; FONT-FAMILY: Arial; COLOR: blue; FONT-SIZE: 10pt\"\u003ESo we can know more detail conference information by DB.\u003C/SPAN\u003E\u003C/FONT\u003E\u003C/I\u003E\u003C/P\u003E \u003CP style=\"MARGIN-LEFT: 33pt\" class=\"MsoNormal\"\u003E\u003CI\u003E\u003CFONT color=\"blue\" size=\"2\" face=\"Arial\"\u003E\u003CSPAN style=\"FONT-STYLE: italic; FONT-FAMILY: Arial; COLOR: blue; FONT-SIZE: 10pt\"\u003EThe DB log which event type is PeakNumberInPool and PeakNumberInServer will be modified in MMP3.4.1.MCC write item PeakNumberInPool, MCS write item PeakNumberInServer.In MMP3.4, the RefNum4 field is the peek number of all VOIP users(include legacy voip and hybrid voip), and the RefStr2, RefStr3 field is filled as date and time.Now the RefNum4 field will only record the peek number of legacy voip users, the RefStr2 field will record the peek number of hybrid voip users, and the RefStr3 field will be NULL.\u003C/SPAN\u003E\u003C/FONT\u003E\u003C/I\u003E\u003C/P\u003E \u003CP style=\"MARGIN-LEFT: 33pt\" class=\"MsoNormal\"\u003E\u003CI\u003E\u003CFONT color=\"blue\" size=\"2\" face=\"Arial\"\u003E\u003CSPAN style=\"FONT-STYLE: italic; FONT-FAMILY: Arial; COLOR: blue; FONT-SIZE: 10pt\"\u003E&nbsp;\u003C/SPAN\u003E\u003C/FONT\u003E\u003C/I\u003E\u003CI\u003E\u003CFONT color=\"blue\" size=\"2\" face=\"Arial\"\u003E\u003CSPAN style=\"FONT-STYLE: italic; FONT-FAMILY: Arial; COLOR: blue; FONT-SIZE: 10pt\"\u003E[11/23/2010 00:00:31.906 pid=22238 tid=-1225414976] Info:HANDLE SQL: INSERT INTO wbxmediaconflog(SequenceNumber, SequenceNum2, TimeStamp, EventType, UID_, GID,ConfID, RefNum1, RefNum2, RefNum3, RefNum4, RefNum5, RefNum6, RefStr1, RefStr2, RefStr3,SiteID) VALUES (196609, 147067, to_date('2010-11-23 00:00:31', 'YYYY-MM-DD HH24:MI:SS'), 'PeakNumberInPool', 0, 0, 57, 1410, 898, 0, 128, 133, 563, '769', '124', '0', 0)\u003C/SPAN\u003E\u003C/FONT\u003E\u003C/I\u003E\u003C/P\u003E \u003CP style=\"MARGIN-LEFT: 33pt\" class=\"MsoNormal\"\u003E\u003CI\u003E\u003CFONT color=\"blue\" size=\"2\" face=\"Arial\"\u003E\u003CSPAN style=\"FONT-STYLE: italic; FONT-FAMILY: Arial; COLOR: blue; FONT-SIZE: 10pt\"\u003E[11/23/2010 00:00:31.906 pid=22238 tid=-1225414976] Info:MCC::ReportPeakClientNum meeting count=1410 meeting user=898 meeting AB user=0 meeting VOIP user=128\u003C/SPAN\u003E\u003C/FONT\u003E\u003C/I\u003E\u003CI\u003E\u003CFONT size=\"2\" face=\"Arial\"\u003E\u003CSPAN style=\"FONT-STYLE: italic; FONT-FAMILY: Arial; FONT-SIZE: 10pt\"\u003E \u003CFONT color=\"red\"\u003E\u003CSPAN style=\"COLOR: red\"\u003Emeeting Hybrid VOIP user=124\u003C/SPAN\u003E\u003C/FONT\u003E \u003CFONT color=\"blue\"\u003E\u003CSPAN style=\"COLOR: blue\"\u003Emeeting SPV user=133 meeting MPV user=563 meeting TP user=9 meeting Active SPV user=57 meeting Active MPV user=0 meeting Active TP user=0 MMPDCID=3 MMPZoneID=1 MMPDCID=769\u003C/SPAN\u003E\u003C/FONT\u003E\u003C/SPAN\u003E\u003C/FONT\u003E\u003C/I\u003E\u003C/P\u003E", "Discussion": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/Discussion", "_type": "ConversationPost", "Count": 0}, "DisplayColor": "#21a2e0", "Expedite": false, "FormattedID": "US112", "LastUpdateDate": "2017-01-24T07:23:58.451Z", "LatestDiscussionAgeInMinutes": null, "Milestones": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/Milestones", "_type": "Milestone", "_tagsNameArray": [], "Count": 0}, "Name": "Need to parse/show “Hybrid VoIP” usage in daily MMP report", "Notes": "\u003CP\u003E1. Modify view MMP_PEAKNUMBERINPOOL\u003C/P\u003E \u003CP\u003E2. Change UI add column hybrid VoIP user\u003C/P\u003E", "Owner": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/user/2440643336", "_refObjectUUID": "08b0841e-4c50-4755-aaf7-a964e2204010", "_refObjectName": "Jay Yu", "_type": "User"}, "Project": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/project/2440642575", "_refObjectUUID": "ffe25600-0e1f-4337-a107-6b5037b551e6", "_refObjectName": "MATS", "_type": "Project"}, "Ready": false, "RevisionHistory": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/revisionhistory/2536467205", "_refObjectUUID": "6a0ff325-dc57-4ed6-9550-53b24ee6ff11", "_type": "RevisionHistory"}, "Tags": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/Tags", "_type": "Tag", "_tagsNameArray": [], "Count": 0}, "LastBuild": null, "LastRun": null, "PassingTestCaseCount": 0, "ScheduleState": "Accepted", "ScheduleStatePrefix": "A", "TestCaseCount": 0, "Attachments": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/Attachments", "_type": "Attachment", "Count": 0}, "Package": null, "AcceptedDate": "2015-04-22T09:20:13.308Z", "Blocked": false, "BlockedReason": null, "Blocker": null, "Children": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/Children", "_type": "HierarchicalRequirement", "Count": 2}, "DefectStatus": null, "Defects": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/Defects", "_type": "Defect", "Count": 0}, "DirectChildrenCount": 2, "HasParent": false, "InProgressDate": "2014-10-09T01:02:37.165Z", "Iteration": null, "Parent": null, "PlanEstimate": 10.0, "Predecessors": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/Predecessors", "_type": "HierarchicalRequirement", "Count": 0}, "Rank": 23130.000, "Recycled": false, "Release": null, "Successors": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/Successors", "_type": "HierarchicalRequirement", "Count": 0}, "TaskActualTotal": 0.0, "TaskEstimateTotal": 59.0, "TaskRemainingTotal": 0.0, "TaskStatus": null, "Tasks": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/Tasks", "_type": "Task", "Count": 0}, "TestCaseStatus": null, "TestCases": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/TestCases", "_type": "TestCase", "Count": 0}, "c_Custom1": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/c_Custom1", "_type": "AllowedAttributeValue", "_tagsNameArray": [], "Count": 0}, "c_Custom2": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/c_Custom2", "_type": "AllowedAttributeValue", "_tagsNameArray": [], "Count": 0}, "Feature": null, "c_InternalUserGroups": {"_rallyAPIMajor": "2", "_rallyAPIMinor": "0", "_ref": "https://rally1.rallydev.com/slm/webservice/v2.0/HierarchicalRequirement/2536467204/c_InternalUserGroups", "_type": "AllowedAttributeValue", "_tagsNameArray": [], "Count": 0}, "PortfolioItem": null, "c_ProductArea": null, "c_RequestType": null, "c_SpecificCiscoProductToSupport": null, "c_testweblink": {}, "c_UEDesignCategory": null, "Errors": [], "Warnings": []}}
 }

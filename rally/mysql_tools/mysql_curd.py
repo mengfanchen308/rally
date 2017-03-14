@@ -75,9 +75,9 @@ class MysqlCurd(object):
         :return:
         """
         value = []  # 用于存储所有参数
-        sql = 'replace into ' + table + ' ('
+        sql = 'replace into `' + table + '` ('
         for key in param.keys():
-            sql += key + ','
+            sql += '`' + key + '`' + ','
             value.append(param.get(key))
         sql = sql[:-1]
         sql += ') values (' + '%s,' * value.__len__()  # 确定传入参数个数
@@ -100,7 +100,7 @@ class MysqlCurd(object):
         value = []  # 用于存储所有参数
         sql = 'insert into `' + table + '` ('
         for key in param.keys():
-            sql += key + ','
+            sql += '`' + key + '`' + ','
             value.append(param.get(key))
         sql = sql[:-1]
         sql += ') values (' + '%s,' * value.__len__()  # 确定传入参数个数
@@ -164,7 +164,7 @@ class MysqlCurd(object):
         """
         sql = 'create table if not exists `' + table + '` ('
         for key in param.keys():
-            sql += key + ' ' + str(param.get(key)) + ', '
+            sql += '`' + key + '` ' + str(param.get(key)) + ', '
         sql += 'time timestamp default current_timestamp)character set utf8 collate utf8_general_ci;'
         try:
             self.curor.execute(sql)
@@ -182,13 +182,20 @@ class MysqlCurd(object):
         """
         params = {}
         for _ in param.keys():
+            if _ == 'Description' or _ == 'Notes' or _ == 'Theme':
+                params[_] = 'varchar(4500)'
+                continue
+            if _ == 'Accepted'or _ == 'PlanEstimate' or _ == 'PlannedVelocity':
+                param[_] = 'decimal(8,2)'
             value = param.get(_)
             if isinstance(value, int):
                 params[_] = 'int(20)'
             elif isinstance(value, bool):
                 params[_] = 'boolean'
             elif isinstance(value, str):
-                params[_] = 'varchar({0})'.format(len(value)*2)
+                params[_] = 'varchar({0})'.format(max(len(value)*2, 75))
+            elif isinstance(value, float):
+                params[_] = 'decimal(8,2)'
             else:
                 params[_] = ''
         params['ObjectID'] = 'varchar(20) not null primary key'
@@ -202,9 +209,9 @@ class MysqlCurd(object):
         :param param:
         :return:
         """
-        sql = 'drop table if exists ' + table + ';create table ' + table + ' ('
+        sql = 'drop table if exists `' + table + '`;create table `' + table + '` ('
         for key in param.keys():
-            sql += key + ' ' + str(param.get(key)) + ', '
+            sql += '`' + key + '` ' + str(param.get(key)) + ', '
         sql += 'time timestamp default current_timestamp)character set utf8 collate utf8_general_ci;'
         try:
             self.curor.execute(sql)
