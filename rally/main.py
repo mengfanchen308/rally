@@ -44,6 +44,7 @@ def insert_mysql_test():
             iteration = Iteration(temp)
             initialize(iteration)
 
+
 def main():
     # initialize_mysql_table()
     insert_mysql_test()

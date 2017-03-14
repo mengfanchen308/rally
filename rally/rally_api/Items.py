@@ -1,6 +1,6 @@
 import requests
 import json
-from .information import *
+from rally_api.information import *
 from mysql_tools.mysql_curd import *
 
 
@@ -65,7 +65,7 @@ class Persistable(object):
             sub_id.append(_['_ref'].split('/')[-1])
         object_num = data['QueryResult']['TotalResultCount']
         if object_num > 2000:
-            for _ in (2000, object, 2000):
+            for _ in (2000, object_num, 2000):
                 result = requests.get(self.sub_url.format(sub, _), headers=headers).text
                 temp_data = json.loads(result)
                 temp_data = temp_data['QueryResult']['Results']
@@ -114,28 +114,54 @@ class Release(Persistable):
     def __init__(self, object_id):
         super(Release, self).__init__(object_id)
 
+
 class Iteration(Persistable):
 
     def __init__(self, object_id):
         super(Iteration, self).__init__(object_id)
 
+
 class PortfolioItem(Persistable):
     """
     feature theme initiative
     """
+    pass
 
-    def __init__(self, object_id):
-        super(PortfolioItem, self).__init__(object_id)
 
-    def get_portfolioitem_id(self, name=''):
-        """
-        默认返回所有feature,theme,initiative.传入参数即可选择
-        :param name:
-        :return:
-        """
-        return super(PortfolioItem, self).get_sub_id(name)
+class Feature(Persistable):
+    pass
+
+
+class Theme(Persistable):
+    pass
+
+
+class Initiative(Persistable):
+    pass
+
+
+def get_portfolioitem_id(name=''):
+    """
+    默认获得portfolioitem传参获得feature
+    :param name:
+    :return:
+    """
+    sub_id = []
+    result = requests.get(portfolioitem_ids_url.format(name,1), headers=headers).text
+    data = json.loads(result)
+    for _ in data['QueryResult']['Results']:
+        sub_id.append(_['_ref'].split('/')[-1])
+    object_num = data['QueryResult']['TotalResultCount']
+    if object_num > 2000:
+        for _ in (2000, object_num, 2000):
+            result = requests.get(portfolioitem_ids_url.format(name, _),
+                                  headers=headers).text
+            temp_data = json.loads(result)
+            temp_data = temp_data['QueryResult']['Results']
+            for temp in temp_data:
+                sub_id.append(temp['_ref'].split('/')[-1])
+    return sub_id
 
 
 if __name__ == '__main__':
-    shiyan = Subscription()
-    shiyan.insert_mysql_param()
+    print(get_portfolioitem_id('feature'))
