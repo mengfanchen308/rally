@@ -120,7 +120,17 @@ def daily_job(days):
 
 def main():
     daily_job(2)
-
-
+    error = tool.query_mysql('error_object', ['name', 'id'])
+    count = 0
+    while len(error) != 0:
+        for _ in error:
+            temp = globals()[_[0]](_[1])
+            # 反射机制
+            initialize(temp)
+            tool.delete_mysql('error_object',{'id': _[1]})
+        error = tool.query_mysql('error_object', ['name', 'id'])
+        count += 1
+        if count >=3:
+            break
 if __name__ == '__main__':
     main()

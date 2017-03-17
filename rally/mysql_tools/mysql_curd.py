@@ -1,5 +1,4 @@
 import pymysql
-import configparser
 from mysql_tools.__init__ import *
 
 host = ip
@@ -33,7 +32,7 @@ class MysqlCurd(object):
         sql = 'delete from `{0}` where '.format(table)
         value = []
         for key in param.keys():  # condition 就是key
-            sql += key + ' = %s and '
+            sql += '`' + key + '` = %s and '
             value.append(param.get(key))
         sql = sql[:-4]
         try:
@@ -112,8 +111,8 @@ class MysqlCurd(object):
 
     def query_mysql(self, table, param):
         """
-        param = [{要查询的}]
-        :param table:
+        param = [要查询的]
+        :param table:str
         :param param:
         :return:
         """
