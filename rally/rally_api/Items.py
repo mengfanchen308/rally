@@ -1,7 +1,7 @@
 import requests
 import json
 from rally_api.information import *
-from mysql_tools.mysql_curd import *
+import datetime
 
 
 class Persistable(object):
@@ -131,34 +131,101 @@ class PortfolioItem(Persistable):
 class Feature(Persistable):
     def __init__(self, object_id):
         super(Feature, self).__init__(object_id)
-        self.url = 'https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/{0}/{1}'.format(self.classname, self.id)
+        self.url = 'https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/{0}/{1}'\
+            .format(self.classname, self.id)
 
 
 class Theme(Persistable):
 
     def __init__(self, object_id):
         super(Theme, self).__init__(object_id)
+        self.url = 'https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/{0}/{1}'.format(self.classname,
+                                                                                                  self.id)
 
 
 class Initiative(Persistable):
+    def __init__(self, object_id):
+        super(Initiative, self).__init__(object_id)
+        self.url = 'https://rally1.rallydev.com/slm/webservice/v2.0/PortfolioItem/{0}/{1}'\
+            .format(self.classname, self.id)
+
+
+class HierarchicalRequirement(Persistable):
+
+    def get_task_id(self):
+        return super(HierarchicalRequirement, self).get_sub_id('/tasks')
+
+class Task(Persistable):
     pass
 
 
-def get_portfolioitem_id(name=''):
+
+def get_object_id(url):
     """
-    默认获得portfolioitem传参获得feature
-    :param name:
+    hierarchicalrequirement,task, feature,theme,initiave,portfolioitem,project,workspath,subscription
+    :param url:
     :return:
     """
     sub_id = []
-    result = requests.get(portfolioitem_ids_url.format(name,1), headers=headers).text
+    result = requests.get(url + '?start={0}&pagesize=2000&fetch=1'.format(1), headers=headers).text
     data = json.loads(result)
     for _ in data['QueryResult']['Results']:
         sub_id.append(_['_ref'].split('/')[-1])
     object_num = data['QueryResult']['TotalResultCount']
     if object_num > 2000:
-        for _ in (2000, object_num, 2000):
-            result = requests.get(portfolioitem_ids_url.format(name, _),
+        for _ in range(2001, object_num, 2000):
+            result = requests.get(url + '?start={0}&pagesize=2000&fetch=1'.format(_),
+                                  headers=headers).text
+            temp_data = json.loads(result)
+            temp_data = temp_data['QueryResult']['Results']
+            for temp in temp_data:
+                sub_id.append(temp['_ref'].split('/')[-1])
+    return sub_id
+
+
+def get_object_id_latest(url, time = 2):
+    """
+    time时间间隔默认两天
+    :param url:
+    :param time:
+    :return:
+    """
+    sub_id = []
+    query_time = (datetime.datetime.now()-datetime.timedelta(days=time)).strftime('%Y-%m-%dT%H:%M:%SZ')
+    result = requests.get(url + '?query=(LastUpdateDate >= "{0}")'
+                                '&start={1}&pagesize=2000'
+                                '&fetch=1'.format(query_time,1), headers=headers).text
+    data = json.loads(result)
+    for _ in data['QueryResult']['Results']:
+        sub_id.append(_['_ref'].split('/')[-1])
+    object_num = data['QueryResult']['TotalResultCount']
+    if object_num > 2000:
+        for _ in range(2001, object_num, 2000):
+            result = requests.get(url + '?start={0}&pagesize=2000&fetch=1'.format(_),
+                                  headers=headers).text
+            temp_data = json.loads(result)
+            temp_data = temp_data['QueryResult']['Results']
+            for temp in temp_data:
+                sub_id.append(temp['_ref'].split('/')[-1])
+    return sub_id
+
+
+def get_iteration_id_lates(url, time=2):
+    """
+    :return:
+    """
+    sub_id = []
+    query_time = (datetime.datetime.now() - datetime.timedelta(days=time)).strftime('%Y-%m-%dT%H:%M:%SZ')
+    result = requests.get(url + '?query=(EndDate >= "{0}")'
+                                '&start={1}&pagesize=2000'
+                                '&fetch=1'.format(query_time, 1), headers=headers).text
+    data = json.loads(result)
+    for _ in data['QueryResult']['Results']:
+        sub_id.append(_['_ref'].split('/')[-1])
+    object_num = data['QueryResult']['TotalResultCount']
+    if object_num > 2000:
+        for _ in range(2001, object_num, 2000):
+            result = requests.get(url + '?start={0}&pagesize=2000&fetch=1'.format(_),
                                   headers=headers).text
             temp_data = json.loads(result)
             temp_data = temp_data['QueryResult']['Results']
@@ -168,4 +235,4 @@ def get_portfolioitem_id(name=''):
 
 
 if __name__ == '__main__':
-    print(get_portfolioitem_id('feature'))
+    print(len(get_iteration_id_lates(iteration_ids_url)))

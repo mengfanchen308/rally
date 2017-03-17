@@ -1,5 +1,6 @@
 from rally_api.Items import *
 from mysql_tools.mysql_curd import *
+import requests
 
 tool = MysqlCurd('rally')
 tool.connect_mysql()
@@ -12,24 +13,35 @@ def initialize_create(root):
 
 
 def initialize(root):
-    param = root.insert_mysql_param()
-    tool.replace_mysql(root.__class__.__name__, param)
+    try:
+        param = root.insert_mysql_param()
+        tool.replace_mysql(root.__class__.__name__, param)
+    except KeyError and IndexError and requests.exceptions.ConnectionError and TimeoutError:
+        tool.replace_mysql('error_object', {'name': root.__class__.__name__, 'id': root.id})
+        return False
 
 
 def initialize_mysql_table():
-    # root = Subscription()
-    # initialize_create(root)
-    # workspace = Workspace(root.get_workspace_id()[0])
-    # initialize_create(workspace)
-    # project = Project(workspace.get_project_id()[0])
-    # initialize_create(project)
-    # release = Release(project.get_release_id()[0])
-    # initialize_create(release)
-    # iteration = Iteration(project.get_iteration_id()[0])
-    # initialize_create(iteration)
-    feature = Feature(get_portfolioitem_id('feature')[0])
-    initialize_create(feature)
-
+    root = Subscription()
+    initialize_create(root)
+    workspace = Workspace(root.get_workspace_id()[0])
+    initialize_create(workspace)
+    project = Project(workspace.get_project_id()[0])
+    initialize_create(project)
+    release = Release(project.get_release_id()[0])
+    initialize_create(release)
+    iteration = Iteration(project.get_iteration_id()[0])
+    initialize_create(iteration)
+    # feature = Feature(20475457565)
+    # initialize_create(feature)
+    # initiative = Initiative(get_object_id(initiative_ids_url)[0])
+    # initialize_create(initiative)
+    # theme = Theme(get_object_id(theme_ids_url)[0])
+    # initialize_create(theme)
+    # us = HierarchicalRequirement(91498157780)
+    # initialize_create(us)
+    # task = Task(91251527632)
+    # initialize_create(task)
 
 def insert_mysql_test():
     root = Subscription()
@@ -45,14 +57,70 @@ def insert_mysql_test():
         for temp in project.get_iteration_id():
             iteration = Iteration(temp)
             initialize(iteration)
-    for _ in get_portfolioitem_id('feature'):
-        feature = Feature(_)
-        initialize(feature)
+    # for _ in get_object_id(feature_ids_url):
+    #     feature = Feature(_)
+    #     initialize(feature)
+    # for _ in get_object_id(initiative_ids_url):
+    #     initiative = Initiative(_)
+    #     initialize(initiative)
+    # for _ in get_object_id(theme_ids_url):
+    #     theme = Theme(_)
+    #     initialize(theme)
+    # for _ in get_object_id_latest(hierarchicalrequirement_ids_url):
+    #     us = HierarchicalRequirement(_)
+    #     initialize(us)
+    # for _ in get_object_id_latest(task_ids_url):
+    #     task = Task(_)
+    #     initialize(task)
+
+
+def daily_job(days):
+    subscription = Subscription()
+    initialize(subscription)
+    urls = [workspace_ids_url, project_ids_url, release_ids_url]
+    for url in urls:
+        for _ in get_object_id(url):
+            if url == workspace_ids_url:
+                temp = Workspace(_)
+            elif url == project_ids_url:
+                temp = Project(_)
+            else:
+                temp = Release(_)
+            initialize(temp)
+
+    for _ in get_iteration_id_lates(iteration_ids_url, days):
+        iteration = Iteration(_)
+        initialize(iteration)
+
+    urls = [feature_ids_url, initiative_ids_url, theme_ids_url, hierarchicalrequirement_ids_url, task_ids_url]
+    # 可以尝试一下python反射机制
+    for url in urls:
+        if url == feature_ids_url:
+            for _ in get_object_id_latest(url, days):
+                temp = Feature(_)
+                initialize(temp)
+        elif url == initiative_ids_url:
+            for _ in get_object_id_latest(url, days):
+                temp = Initiative(_)
+                initialize(temp)
+        elif url == theme_ids_url:
+            for _ in get_object_id_latest(url, days):
+                temp = Theme(_)
+                initialize(temp)
+        elif url == hierarchicalrequirement_ids_url:
+            for _ in get_object_id_latest(url, days):
+                temp = HierarchicalRequirement(_)
+                initialize(temp)
+        elif url == task_ids_url:
+            for _ in get_object_id_latest(url, days):
+                temp = Task(_)
+                initialize(temp)
+    exit(0)
 
 
 def main():
-    initialize_mysql_table()
-    # insert_mysql_test()
+    daily_job(2)
+
 
 if __name__ == '__main__':
     main()

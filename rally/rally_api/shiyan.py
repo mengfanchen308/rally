@@ -40,6 +40,8 @@
 #     page = requests.get(re['_ref'], headers=headers).text
 #     result = json.loads(page)
 #
-s = 'sdfasfsadfasdfasdf{1}werwer{0}'
-print(s)
-print(s.format('asdf', '213123123'))
+from mysql_tools.mysql_curd import *
+tool = MysqlCurd('rally')
+tool.connect_mysql()
+
+tool.replace_mysql('error_object',{'name': 'dsaffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'})

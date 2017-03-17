@@ -83,12 +83,9 @@ class MysqlCurd(object):
         sql += ') values (' + '%s,' * value.__len__()  # 确定传入参数个数
         sql = sql[:-1]
         sql += ')'
-        try:
-            self.curor.execute(sql, value)
-            self.conn.commit()
-        except Exception as e:
-            print(sql)
-            print(e)
+
+        self.curor.execute(sql, value)
+        self.conn.commit()
 
     def insert_mysql(self, table, param):
         """
@@ -183,7 +180,7 @@ class MysqlCurd(object):
         params = {}
         for _ in param.keys():
             if _ == 'Description' or _ == 'Notes' or _ == 'Theme':
-                params[_] = 'varchar(4500)'
+                params[_] = 'text'
                 continue
             if _ == 'Accepted'or _ == 'PlanEstimate' or _ == 'PlannedVelocity':
                 param[_] = 'decimal(8,2)'
@@ -193,13 +190,16 @@ class MysqlCurd(object):
             elif isinstance(value, bool):
                 params[_] = 'boolean'
             elif isinstance(value, str):
-                params[_] = 'varchar({0})'.format(max(len(value)*2, 75))
+                params[_] = 'varchar({0})'.format(max(len(value)*2, 300))
             elif isinstance(value, float):
-                params[_] = 'decimal(8,2)'
+                if _ == 'PercentDoneByStoryCount' or _ == 'PercentDoneByStoryPlanEstimate':
+                    params[_] = 'decimal(8,5)'
+                else:
+                    params[_] = 'decimal(8,2)'
             else:
                 params[_] = ''
         params['ObjectID'] = 'varchar(20) not null primary key'
-        self.create_table_force(table, params)
+        self.create_table(table, params)
 
     def create_table_force(self, table, param):
         """
