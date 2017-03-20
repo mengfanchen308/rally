@@ -1,4 +1,4 @@
-CREATE TABLE `subscription` (
+CREATE TABLE `Subscription` (
   `_rallyAPIMajor` varchar(300) DEFAULT NULL,
   `_rallyAPIMinor` varchar(300) DEFAULT NULL,
   `_ref` varchar(300) DEFAULT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `subscription` (
   PRIMARY KEY (`ObjectID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ----------
-CREATE TABLE `feature` (
+CREATE TABLE `Feature` (
   `_rallyAPIMajor` varchar(300) DEFAULT NULL,
   `_rallyAPIMinor` varchar(300) DEFAULT NULL,
   `_ref` varchar(300) DEFAULT NULL,
@@ -100,7 +100,7 @@ CREATE TABLE `feature` (
   PRIMARY KEY (`ObjectID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ----------
-CREATE TABLE `workspace` (
+CREATE TABLE `Workspace` (
   `_rallyAPIMajor` varchar(300) DEFAULT NULL,
   `_rallyAPIMinor` varchar(300) DEFAULT NULL,
   `_ref` varchar(300) DEFAULT NULL,
@@ -125,7 +125,7 @@ CREATE TABLE `workspace` (
   PRIMARY KEY (`ObjectID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ----------
-CREATE TABLE `project` (
+CREATE TABLE `Project` (
   `_rallyAPIMajor` varchar(300) DEFAULT NULL,
   `_rallyAPIMinor` varchar(300) DEFAULT NULL,
   `_ref` varchar(300) DEFAULT NULL,
@@ -151,7 +151,7 @@ CREATE TABLE `project` (
   PRIMARY KEY (`ObjectID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ----------
-CREATE TABLE `release` (
+CREATE TABLE `Release` (
   `_rallyAPIMajor` varchar(300) DEFAULT NULL,
   `_rallyAPIMinor` varchar(300) DEFAULT NULL,
   `_ref` varchar(300) DEFAULT NULL,
@@ -185,7 +185,7 @@ CREATE TABLE `release` (
   PRIMARY KEY (`ObjectID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ----------
-CREATE TABLE `iteration` (
+CREATE TABLE `Iteration` (
   `_rallyAPIMajor` varchar(300) DEFAULT NULL,
   `_rallyAPIMinor` varchar(300) DEFAULT NULL,
   `_ref` varchar(300) DEFAULT NULL,
@@ -216,7 +216,7 @@ CREATE TABLE `iteration` (
   PRIMARY KEY (`ObjectID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ----------
-CREATE TABLE `theme` (
+CREATE TABLE `Theme` (
   `_rallyAPIMajor` varchar(300) DEFAULT NULL,
   `_rallyAPIMinor` varchar(300) DEFAULT NULL,
   `_ref` varchar(300) DEFAULT NULL,
@@ -281,7 +281,7 @@ CREATE TABLE `theme` (
   PRIMARY KEY (`ObjectID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ----------
-CREATE TABLE `initiative` (
+CREATE TABLE `Initiative` (
   `_rallyAPIMajor` varchar(300) DEFAULT NULL,
   `_rallyAPIMinor` varchar(300) DEFAULT NULL,
   `_ref` varchar(300) DEFAULT NULL,
@@ -347,7 +347,7 @@ CREATE TABLE `initiative` (
   PRIMARY KEY (`ObjectID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ----------
-CREATE TABLE `hierarchicalrequirement` (
+CREATE TABLE `Hierarchicalrequirement` (
   `_rallyAPIMajor` varchar(300) DEFAULT NULL,
   `_rallyAPIMinor` varchar(300) DEFAULT NULL,
   `_ref` varchar(300) DEFAULT NULL,
@@ -409,7 +409,7 @@ CREATE TABLE `hierarchicalrequirement` (
   PRIMARY KEY (`ObjectID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ----------
-CREATE TABLE `task` (
+CREATE TABLE `Task` (
   `_rallyAPIMajor` varchar(300) DEFAULT NULL,
   `_rallyAPIMinor` varchar(300) DEFAULT NULL,
   `_ref` varchar(300) DEFAULT NULL,
