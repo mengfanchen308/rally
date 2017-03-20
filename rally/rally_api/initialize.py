@@ -1,4 +1,6 @@
 from mysql_tools.mysql_curd import *
+
+
 def initialize_mysql():
     tool = MysqlCurd('rally')
     tool.connect_mysql()
