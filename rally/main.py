@@ -16,8 +16,9 @@ def initialize(root):
     try:
         param = root.insert_mysql_param()
         tool.replace_mysql(root.__class__.__name__, param)
-    except KeyError and IndexError and requests.exceptions.ConnectionError and TimeoutError:
-        tool.replace_mysql('error_object', {'name': root.__class__.__name__, 'id': root.id})
+    except KeyError and IndexError and requests.exceptions.ConnectionError \
+            and TimeoutError and pymysql.err.InternalError as e:
+        tool.replace_mysql('error_object', {'name': root.__class__.__name__, 'id': root.id, 'reason': repr(e)})
         return False
 
 
@@ -88,7 +89,7 @@ def daily_job(days):
                 temp = Release(_)
             initialize(temp)
 
-    for _ in get_iteration_id_lates(iteration_ids_url, days):
+    for _ in get_iteration_id_latest(iteration_ids_url, days):
         iteration = Iteration(_)
         initialize(iteration)
 
@@ -118,8 +119,31 @@ def daily_job(days):
     exit(0)
 
 
+def all_job():
+    subscription = Subscription()
+    initialize(subscription)
+    urls = {'Workspace': workspace_ids_url,
+            'Project': project_ids_url,
+            'Release': release_ids_url,
+            'Iteration': iteration_ids_url,
+            'Feature': feature_ids_url,
+            'Initiative': initiative_ids_url,
+            'Theme': theme_ids_url,
+            'HierarchicalRequirement': hierarchicalrequirement_ids_url,
+            'Task': task_ids_url}
+    for key in urls.keys():
+        ids = get_object_id(urls.get(key))
+        print(key, len(ids))
+        # temp = globals()[key](ids[0])
+        # initialize(temp)
+        for _ in get_object_id(urls.get(key)):
+            temp = globals()[key](_)
+            initialize(temp)
+
+
 def main():
-    daily_job(2)
+    all_job()
+    # daily_job(2)
     error = tool.query_mysql('error_object', ['name', 'id'])
     count = 0
     while len(error) != 0:
@@ -130,7 +154,7 @@ def main():
             tool.delete_mysql('error_object',{'id': _[1]})
         error = tool.query_mysql('error_object', ['name', 'id'])
         count += 1
-        if count >=3:
+        if count >= 3:
             break
 if __name__ == '__main__':
     main()

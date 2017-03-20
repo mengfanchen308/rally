@@ -183,7 +183,7 @@ def get_object_id(url):
     return sub_id
 
 
-def get_object_id_latest(url, time = 2):
+def get_object_id_latest(url, time=2):
     """
     time时间间隔默认两天
     :param url:
@@ -210,7 +210,7 @@ def get_object_id_latest(url, time = 2):
     return sub_id
 
 
-def get_iteration_id_lates(url, time=2):
+def get_iteration_id_latest(url, time=2):
     """
     :return:
     """
@@ -235,4 +235,4 @@ def get_iteration_id_lates(url, time=2):
 
 
 if __name__ == '__main__':
-    print(len(get_iteration_id_lates(iteration_ids_url)))
+    print(len(get_object_id(iteration_ids_url)))
