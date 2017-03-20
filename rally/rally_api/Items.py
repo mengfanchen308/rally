@@ -212,6 +212,9 @@ def get_object_id_latest(url, time=2):
 
 def get_iteration_id_latest(url, time=2):
     """
+    iteration条件不同需要单独
+    :param url:
+    :param time:
     :return:
     """
     sub_id = []

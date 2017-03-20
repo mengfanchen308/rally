@@ -44,6 +44,7 @@ def initialize_mysql_table():
     # task = Task(91251527632)
     # initialize_create(task)
 
+
 def insert_mysql_test():
     root = Subscription()
     initialize(root)
